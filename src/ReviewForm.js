@@ -1,10 +1,15 @@
 // a form at the bottom of a Movie component that allows users to leave reviews. When submitted, the review should be added to the movie. 
 // All this data can be stored in an array, no networking or database needed for this assignment.
+import { useState } from "react"
 import Review from "./Review"
+import Star from './Stars'
 
 let allReviews = []
 
 export default function ReviewForm() {
+    const [nameValue, setNameValue] = useState("")
+    const [rating, setRating] = useState(null)
+
     const uploadReview = (event) => {
         const review = {
             reviewName: document.getElementById('name').value,
@@ -20,12 +25,11 @@ export default function ReviewForm() {
     return (
         <form>
             <div>
-                <label htmlFor="name">Your Name: </label>
-                <input type="text" className="form-control" id="name"></input>
+                <Star/>
             </div>
             <div>
-                <label htmlFor="rating">Rating 1-5: </label>
-                <input type="text" className="form-control" id="rating"></input>
+                <label htmlFor="name">Your Name: </label>
+                <input type="text" className="form-control" id="name" value={nameValue} onChange={(event) => setNameValue(event.target.value)}></input>
             </div>
             <div>
                 <Review/>

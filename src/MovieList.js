@@ -2,6 +2,7 @@
 import { Fragment } from 'react'
 import bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.css'
 import Movie from './Movie'
+import ReviewList from './ReviewList'
 
 let movieData = [
     {
@@ -63,7 +64,8 @@ export default function MovieList() {
                 {movieData.map((movie, i) => {
                     return (
                         <Fragment key={i}>
-                        <Movie key={movie.id} genre={movie.genre} movieName={movie.movieName} movieImg={movie.movieImage} synopsis={movie.synopsis} />
+                        <Movie className="text-center" key={movie.id} genre={movie.genre} movieName={movie.movieName} movieImg={movie.movieImage} synopsis={movie.synopsis} />
+                        <ReviewList className="text-center" id={movie.id}/>
                         </Fragment>
                     )
                 })}
