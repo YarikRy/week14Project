@@ -6,7 +6,7 @@ import ReviewList from './ReviewList'
 
 export default function Movie(props) {
     return ( 
-        <div className='card mb-3 col-6' id={props.id}>
+        <div className='card mb-3 col-6 text-center d-flex ms-auto me-auto' id={props.id}>
             <img src={props.movieImg} className='card-img-top'/>
             <div className='card-body'>
                 <h5 className='card-title'>{props.genre}: {props.movieName}</h5>

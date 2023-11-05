@@ -4,23 +4,8 @@ import { useState } from "react"
 import Review from "./Review"
 import Star from './Stars'
 
-let allReviews = []
 
-export default function ReviewForm() {
-    const [nameValue, setNameValue] = useState("")
-    const [rating, setRating] = useState(null)
-
-    const uploadReview = (event) => {
-        const review = {
-            reviewName: document.getElementById('name').value,
-            reviewRating: document.getElementById('rating').value,
-            reviewText: document.getElementById('review').value,
-        }
-        event.preventDefault()
-        allReviews.push(review)
-        console.log(allReviews)
-        
-    }
+export default function ReviewForm(props) {
 
     return (
         <form>
@@ -28,13 +13,8 @@ export default function ReviewForm() {
                 <Star/>
             </div>
             <div>
-                <label htmlFor="name">Your Name: </label>
-                <input type="text" className="form-control" id="name" value={nameValue} onChange={(event) => setNameValue(event.target.value)}></input>
-            </div>
-            <div>
                 <Review/>
             </div>
-            <button className="btn btn-primary mt-1" onClick={uploadReview}>Submit</button>
         </form>
     )
 }

@@ -1,15 +1,11 @@
 // A text review a user can leave on a movie.
 
-import { useState } from "react"
-
-export default function Review() {
-
-    const [reviewValue, setReviewValue] = useState("")
+export default function Review(props) {
 
     return (
         <div>
-        <label htmlFor="review">Review text: </label>
-        <input type="text" id="review" className="form-control" value={reviewValue} onChange={(event) => setReviewValue(event.target.value)}></input>
+        <label htmlFor="review">Review: </label>
+        <input type="text" id="review" className="form-control" value={props.reviewVal} onChange={props.changeReview}></input>
         </div>
     )
 }

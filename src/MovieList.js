@@ -64,8 +64,8 @@ export default function MovieList() {
                 {movieData.map((movie, i) => {
                     return (
                         <Fragment key={i}>
-                        <Movie className="text-center" key={movie.id} genre={movie.genre} movieName={movie.movieName} movieImg={movie.movieImage} synopsis={movie.synopsis} />
-                        <ReviewList className="text-center" id={movie.id}/>
+                        <Movie key={movie.key} genre={movie.genre} movieName={movie.movieName} movieImg={movie.movieImage} synopsis={movie.synopsis} />
+                        <ReviewList className="text-center" id={movie.key}/>
                         </Fragment>
                     )
                 })}
